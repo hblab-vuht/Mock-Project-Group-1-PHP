@@ -13,10 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
-    Route::group(['as' => 'api.v1.', 'middleware' => ['auth:api']], function () {
-        Route::group(['prefix' => 'users'], function () {
-            Route::get('/', 'UserController@index');
-        });
-    });
+Route::group(['namespace' => 'Api'], function ($router) {
+    Route::post('register', 'Auth\RegisterController@register');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+    Route::get('auth-error', function () {
+        return response()->json(['error' => 'Unauthorized'], 401);
+    })->name('auth-error');
 });
