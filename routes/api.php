@@ -20,3 +20,13 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
         });
     });
 });
+Route::get('login', [ 'as' => 'login', 'uses' => 'Api\Auth\LoginController@getLogin'])->name('login');
+Route::post('login', 'Api\Auth\LoginController@postLogin');
+
+Route::get('register',  [ 'as' => 'register', 'uses' => 'Api\Auth\RegisterController@getRegister']);
+Route::post('register', [ 'as' => 'register', 'uses' => 'Api\Auth\RegisterController@postRegister']);
+Route::get('logout', [ 'as' => 'logout', 'uses' => 'Api\Auth\LogoutController@getLogout']);
+
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('user-info','testController@getuser');
+});

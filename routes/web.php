@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('login', [ 'as' => 'login', 'uses' => 'Api\Auth\LoginController@getLogin']);
+// Route::post('login', 'Api\Auth\LoginController@postLogin');
+
+// Route::get('register',  [ 'as' => 'register', 'uses' => 'Api\Auth\RegisterController@getRegister']);
+// Route::post('register', [ 'as' => 'register', 'uses' => 'Api\Auth\RegisterController@postRegister']);
+
+// Route::get('logout', [ 'as' => 'logout', 'uses' => 'Api\Auth\LogoutController@getLogout']);
