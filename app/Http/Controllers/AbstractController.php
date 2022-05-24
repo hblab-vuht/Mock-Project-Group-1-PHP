@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 abstract class AbstractController extends Controller
 {
     protected $user;
-
     protected $compacts;
 
     public function __construct()

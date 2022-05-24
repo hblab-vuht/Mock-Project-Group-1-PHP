@@ -94,7 +94,7 @@ abstract class ApiController extends AbstractController
             Log::info($e->getMessage());
             throw new CheckAuthorizationException($e->getMessage());
         } catch (Exception $e) {
-            Log::info($e->getMessage());
+            Log::error($e);
             DB::rollBack();
             throw new ServerException();
         }

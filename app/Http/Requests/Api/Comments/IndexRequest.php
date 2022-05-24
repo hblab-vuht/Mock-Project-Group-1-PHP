@@ -1,11 +1,23 @@
 <?php
 
-namespace App\Http\Requests\Api\Users;
+namespace App\Http\Requests\Api\Comments;
 
 use App\Http\Requests\Api\ApiRequest;
 
 class IndexRequest extends ApiRequest
 {
+    /**
+     * Get custom rules for validator errors.
+     *
+     * @return array
+     */
+    public function rules(): array
+    {
+        return [
+            'per_page' => 'integer|min:1',
+        ];
+    }
+
     /**
      * Get custom messages for validator errors.
      *

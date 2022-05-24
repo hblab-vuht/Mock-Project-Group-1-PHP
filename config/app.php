@@ -1,6 +1,11 @@
 <?php
 
 return [
+    
+    'urlDetailRequest' => env('MAIL_FROM_ADDRESS', 'tranphuongjapan210419941@gmail.com'),
+
+    'requestUrl' => env('REQUEST_URL','http://localhost:8000/'),
+
 
     /*
     |--------------------------------------------------------------------------
@@ -13,7 +18,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'RequestGate'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +72,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +85,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vn',
 
     /*
     |--------------------------------------------------------------------------
@@ -174,7 +179,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        App\Providers\RepositoryServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*

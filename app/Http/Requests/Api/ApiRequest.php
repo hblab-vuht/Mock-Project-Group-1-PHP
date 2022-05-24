@@ -15,6 +15,7 @@ abstract class ApiRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         $dataResponse = [
+            'code' => 422,
             'message' => $validator->errors()->toArray(),
         ];
 
